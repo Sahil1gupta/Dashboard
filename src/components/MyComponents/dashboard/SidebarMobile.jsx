@@ -62,7 +62,7 @@ function SidebarMobile() {
             Dashboard
           </Link>
           <Link
-            to="#"
+            to="/crops-fruits"
             className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
           >
             <ShoppingCart className="h-5 w-5" />
@@ -72,7 +72,7 @@ function SidebarMobile() {
             </Badge>
           </Link>
           <Link
-            to="#"
+            to="/products"
             className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
           >
             <Package className="h-5 w-5" />
@@ -96,10 +96,10 @@ function SidebarMobile() {
         <div className="mt-auto">
           <Card>
             <CardHeader>
-              <CardTitle>Upgrade to Pro</CardTitle>
+              <CardTitle>Work in Progress</CardTitle>
               <CardDescription>
-                Unlock all features and get unlimited access to our
-                support team.
+                This project is under development , Unlock all features and get unlimited access to our
+                platform.
               </CardDescription>
             </CardHeader>
             <CardContent>

@@ -21,7 +21,7 @@ const router=createBrowserRouter([
         element:<Main/>
       },
       {
-        path:"/orders",
+        path:"/crops-fruits",
         element:<Orders/>
       }
     ]

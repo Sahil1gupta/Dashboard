@@ -56,11 +56,11 @@ function SidebarDesktop() {
                 Dashboard
               </Link>
               <Link
-                to="/orders"
+                to="/crops-fruits"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <ShoppingCart className="h-4 w-4" />
-                Orders
+                Crops & Fruits
                 <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
                   6
                 </Badge>
@@ -73,7 +73,7 @@ function SidebarDesktop() {
                 Products{" "}
               </Link>
               <Link
-                to="/coustomers"
+                to="#"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <Users className="h-4 w-4" />
