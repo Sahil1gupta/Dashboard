@@ -3,7 +3,7 @@ import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 import io from 'socket.io-client';
 
 const BASE_URL =  import.meta.env.MODE=== 'production' 
-  ? 'ws://farmers-friend.onrender.com' 
+  ? 'wss://farmers-friend.onrender.com' 
   : '/socket.io';
   console.log( import.meta.env.MODE);
   console.log(BASE_URL)

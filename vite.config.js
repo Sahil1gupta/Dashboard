@@ -12,7 +12,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, '')
       },
       '/socket.io': {
-        target: 'ws://farmers-friend.onrender.com',
+        target: 'wss://farmers-friend.onrender.com',
         ws: true,
         // changeOrigin: true,
       }
