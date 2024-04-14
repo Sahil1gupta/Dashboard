@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
+import io from 'socket.io-client';
 function Barchart() {
     const data = [
         {
@@ -46,6 +46,37 @@ function Barchart() {
           
         },
       ];
+
+      const [sendata, setSenata] = useState([]);
+
+      useEffect(() => {
+        const socket = io('/socket', { transports: ['websocket'] });
+        console.log('Before connect event listener');
+        
+      
+        socket.on('connect', () => {
+          console.log('Socket.IO connected');
+          // Emit the 'soil' event to the server
+          socket.emit('soil', { message: 'Hello from client' });
+        });
+      
+        socket.on('soil', (message) => {
+          setSenata(prevData => [...prevData, message]);
+        });
+        socket.on('connect_error', (err) => {
+          console.log(`connect_error due to ${err.message}`);
+        });
+      
+        socket.on('connect_timeout', (timeout) => {
+          console.log('Connection Timeout', timeout);
+        });
+    console.log(sendata)
+        socket.on('disconnect', () => {
+          console.log('Socket.IO connection closed');
+        });
+    // Clean up the Socket.IO connection when the component unmounts
+        return () => socket.disconnect();
+      }, []);
   return (
     <div className="w-full h-72"> 
   
