@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 import { Switch } from "@/components/ui/switch";
 console.log( import.meta.env.MODE);
 const BASE_URL =  import.meta.env.MODE=== 'production' 
-  ? 'https://dashboard-crop.vercel.app/api' 
+  ? 'https://farmers-friend.onrender.com' 
   : '/api';
   console.log( import.meta.env.MODE);
   console.log(BASE_URL)
