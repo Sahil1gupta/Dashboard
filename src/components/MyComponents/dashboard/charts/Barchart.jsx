@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import io from 'socket.io-client';
+
+const BASE_URL =  import.meta.env.MODE=== 'production' 
+  ? 'ws://farmers-friend.onrender.com' 
+  : '/socket.io';
+  console.log( import.meta.env.MODE);
+  console.log(BASE_URL)
+
+
 function Barchart() {
     const data = [
         {
@@ -50,7 +58,7 @@ function Barchart() {
       const [sendata, setSenata] = useState([]);
 
       useEffect(() => {
-        const socket = io('/socket.io');
+        const socket = io(`${BASE_URL}`);
         console.log('Before connect event listener');
         
       
