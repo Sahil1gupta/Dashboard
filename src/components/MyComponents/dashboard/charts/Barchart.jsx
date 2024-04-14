@@ -68,9 +68,11 @@ function Barchart() {
           socket.emit('soil', { message: 'Hello from client' });
         });
       
-        socket.on('soil', (message) => {
-          setSenata(prevData => [...prevData, message]);
-          console.log(message)
+        socket.on('soil', (message1,message2) => {
+          setSenata(prevData => [...prevData, message1]);
+          console.log(message1)
+          console.log(message2)
+
         });
         socket.on('connect_error', (err) => {
           console.log(`connect_error due to ${err.message}`);
