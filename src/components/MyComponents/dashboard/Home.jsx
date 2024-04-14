@@ -9,24 +9,30 @@ import {
   CardFooter,
   CardTitle,
 } from "../../ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { BellRing, Check } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 import { Switch } from "@/components/ui/switch";
+console.log( import.meta.env.MODE);
+const BASE_URL =  import.meta.env.MODE=== 'production' 
+  ? 'https://dashboard-crop.vercel.app/api' 
+  : '/api';
+  console.log( import.meta.env.MODE);
+  console.log(BASE_URL)
 function Home() {
   const [crops, setCrops] = useState([]);
   const [rice, setRice] = useState([]);
+
   //all crops api
   useEffect(() => {
-    fetch("/api/crops/get")
+    fetch(`${BASE_URL}/crops/get`)
       .then((response) => response.json())
       .then((result) => {
         setCrops(result);
         setRice(result[0]);
-
         console.log(result);
       })
       .catch((error) => console.error(error));
