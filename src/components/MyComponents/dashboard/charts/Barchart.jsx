@@ -50,7 +50,7 @@ function Barchart() {
       const [sendata, setSenata] = useState([]);
 
       useEffect(() => {
-        const socket = io('/socket', { transports: ['websocket'] });
+        const socket = io('/socket.io');
         console.log('Before connect event listener');
         
       

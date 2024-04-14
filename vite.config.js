@@ -6,16 +6,7 @@ import path from 'path' // Add this line
 export default defineConfig({
   server:{
     proxy:{
-      '/api': {
-        target: 'https://farmers-friend.onrender.com',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      },
-      '/socket': {
-        target: 'wss://farmers-friend.onrender.com',
-        ws: true,
-        changeOrigin: true,
-      }
+      '/api':'https://farmers-friend.onrender.com'
     }
   },
   plugins: [react()],
@@ -26,3 +17,15 @@ export default defineConfig({
   },
   
 })
+
+
+// '/api': {
+//   target: 'https://farmers-friend.onrender.com',
+//   changeOrigin: true,
+//   rewrite: (path) => path.replace(/^\/api/, '')
+// },
+// '/socket.io': {
+//   target: 'ws://farmers-friend.onrender.com',
+//   ws: true,
+//   // changeOrigin: true,
+// }

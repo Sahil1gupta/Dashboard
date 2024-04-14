@@ -69,12 +69,12 @@ function Home() {
       <Card>
         <CardHeader>
           <CardTitle>
-            <Avatar>
+            {/* <Avatar>
               <AvatarImage src="src\assets\sprouts.png" />
               <AvatarFallback className="bg-blue-500 text-black">
                 CN
               </AvatarFallback>
-            </Avatar>
+            </Avatar> */}
             Sprouts
           </CardTitle>
           <CardDescription>You have 3 messages.</CardDescription>
