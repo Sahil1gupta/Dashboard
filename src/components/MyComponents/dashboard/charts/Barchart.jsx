@@ -70,6 +70,7 @@ function Barchart() {
       
         socket.on('soil', (message) => {
           setSenata(prevData => [...prevData, message]);
+          console.log(message)
         });
         socket.on('connect_error', (err) => {
           console.log(`connect_error due to ${err.message}`);
